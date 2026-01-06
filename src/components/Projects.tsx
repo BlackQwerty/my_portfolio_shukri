@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Figma, Eye, Sparkles, Code, Palette, Filter } from 'lucide-react';
 
 export function Projects() {

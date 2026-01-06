@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, User, GraduationCap, Briefcase, Award, Mail, Sparkles } from 'lucide-react';
 
 export function Navigation() {

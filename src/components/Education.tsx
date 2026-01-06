@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { GraduationCap, Award, BookOpen, Trophy, Star, Calendar, Sparkles } from 'lucide-react';
 
 export function Education() {

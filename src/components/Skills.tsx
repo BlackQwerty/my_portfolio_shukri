@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Code, Palette, Layers, Zap, Database, Smartphone, Globe, Award, Brain, Rocket } from 'lucide-react';
 
 export function Skills() {
