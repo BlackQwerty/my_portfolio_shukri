@@ -71,7 +71,7 @@ export function Home() {
                   Hello, I'm
                 </span>
                 <span className="block bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
-                  Your Name
+                  Shukri
                 </span>
               </h1>
             </motion.div>
@@ -92,8 +92,8 @@ export function Home() {
                 </span>
               </h2>
               <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-                Crafting intuitive digital experiences through human-centered design 
-                and cutting-edge technology. Passionate about creating interfaces that 
+                Crafting intuitive digital experiences through human-centered design
+                and cutting-edge technology. Passionate about creating interfaces that
                 users love.
               </p>
             </motion.div>
@@ -200,7 +200,7 @@ export function Home() {
                   <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 overflow-hidden shadow-2xl shadow-blue-500/50 relative">
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
                     <div className="w-full h-full flex items-center justify-center text-white text-7xl font-bold">
-                      YN
+                      S
                     </div>
                   </div>
 
