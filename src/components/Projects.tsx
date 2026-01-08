@@ -1,52 +1,69 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Figma, Eye, Sparkles, Code, Palette, Filter } from 'lucide-react';
+import { ExternalLink, Github, Figma, Eye, Sparkles, Code, Palette, Smartphone, Monitor, Bot, Globe, Terminal } from 'lucide-react';
+
+interface ProjectLinks {
+  demo?: string;
+  github?: string;
+  figma?: string;
+}
+
+interface Project {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tags: string[];
+  color: string;
+  links: ProjectLinks;
+  featured: boolean;
+}
 
 export function Projects() {
   const [filter, setFilter] = useState('all');
 
   const categories = [
     { id: 'all', label: 'All Projects', icon: Sparkles },
-    { id: 'uiux', label: 'UI/UX Design', icon: Palette },
-    { id: 'web', label: 'Web Development', icon: Code },
-    { id: 'mobile', label: 'Mobile Apps', icon: null },
-    { id: 'research', label: 'Research', icon: null },
+    { id: 'mobile', label: 'Mobile Apps', icon: Smartphone },
+    { id: 'terminal', label: 'Terminal Project', icon: Terminal },
+    { id: 'desktop', label: 'Desktop App', icon: Monitor },
+    { id: 'artificial', label: 'Artificial Intelligence', icon: Bot },
+    { id: 'webapp', label: 'Web Application', icon: Globe },
   ];
 
   const projects = [
     {
-      title: 'Smart Campus Navigation App',
+      title: 'SULAM Pineapple Mobile App',
       category: 'mobile',
-      description: 'An intuitive mobile app designed to help UTeM students navigate the campus with AR features and real-time location services.',
-      image: '📱',
+      description: 'An intuitive mobile app designed for Lembaga Perindustrian Nanas Malaysia (LPNM) to manage their pineapple production and distribution between farmers and retailers.',
+      image: '🍍',
       tags: ['Figma', 'User Research', 'Prototyping', 'Mobile UI'],
       color: 'from-blue-500 to-cyan-500',
       links: {
         demo: '#',
-        github: '#',
-        figma: '#',
+        github: 'https://github.com/BlackQwerty/sulam_app.git',
       },
       featured: true,
     },
     {
-      title: 'E-Commerce Redesign',
-      category: 'uiux',
-      description: 'Complete UX overhaul of an e-commerce platform, improving conversion rate by 45% through user-centered design principles.',
+      title: 'E-Commerce Desktop App',
+      category: 'desktop',
+      description: 'Complete Java OOP project for an e-commerce platform.',
       image: '🛒',
-      tags: ['UX Research', 'Wireframing', 'A/B Testing', 'Figma'],
+      tags: ['Java', 'OOP', 'GUI', 'Swing'],
       color: 'from-purple-500 to-pink-500',
       links: {
         demo: '#',
-        figma: '#',
+        github: '#',
       },
       featured: true,
     },
     {
-      title: 'Task Management Dashboard',
-      category: 'web',
-      description: 'A modern, responsive task management application built with React and featuring real-time collaboration.',
-      image: '📊',
-      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase'],
+      title: 'Lost and Found UTeM System',
+      category: 'webapp',
+      description: 'A Web-App for UTeM students to report lost and found items with features such as user authentication, item tracking, and notification system.',
+      image: '🕵️‍♀️',
+      tags: ['Spring Boot', 'Java', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'MySQL'],
       color: 'from-green-500 to-emerald-500',
       links: {
         demo: '#',
@@ -55,83 +72,35 @@ export function Projects() {
       featured: false,
     },
     {
-      title: 'Accessibility Study: Banking Apps',
-      category: 'research',
-      description: 'Research project analyzing accessibility features in Malaysian banking apps with recommendations for improvement.',
-      image: '🔍',
-      tags: ['User Research', 'Accessibility', 'Heuristic Evaluation'],
+      title: 'Human Resource Management System',
+      category: 'terminal',
+      description: 'A fast improvised Human Resource Management System for Medium-Small Enterprises using C++ and MySQL.',
+      image: '👩🏻‍💼',
+      tags: ['C++', 'MySQL', 'CMake', 'Python'],
       color: 'from-yellow-500 to-orange-500',
       links: {
         demo: '#',
-      },
-      featured: false,
-    },
-    {
-      title: 'Food Delivery App Design',
-      category: 'uiux',
-      description: 'Complete UI/UX design for a local food delivery service with focus on speed and user satisfaction.',
-      image: '🍔',
-      tags: ['Mobile Design', 'User Flow', 'Prototyping', 'Figma'],
-      color: 'from-red-500 to-rose-500',
-      links: {
-        figma: '#',
-      },
-      featured: false,
-    },
-    {
-      title: 'Portfolio Website Builder',
-      category: 'web',
-      description: 'Web-based tool that helps students create professional portfolios with customizable templates and themes.',
-      image: '🎨',
-      tags: ['React', 'Next.js', 'Tailwind', 'Drag & Drop'],
-      color: 'from-indigo-500 to-blue-500',
-      links: {
-        demo: '#',
         github: '#',
       },
-      featured: true,
-    },
-    {
-      title: 'Mental Health Support App',
-      category: 'mobile',
-      description: 'Mobile app concept for university students to access mental health resources and peer support.',
-      image: '🧠',
-      tags: ['Mobile UI', 'User Research', 'Empathy Mapping', 'Figma'],
-      color: 'from-teal-500 to-cyan-500',
-      links: {
-        figma: '#',
-      },
       featured: false,
     },
     {
-      title: 'AI Chatbot Interface',
-      category: 'uiux',
-      description: 'Conversational UI design for an AI-powered customer service chatbot with natural language processing.',
+      title: 'AI Cotton Disease Detection',
+      category: 'artificial',
+      description: 'An AI-powered Cotton Disease Detection System using Computer Vision and Machine Learning.',
       image: '🤖',
-      tags: ['Conversational UI', 'AI/ML', 'Prototyping'],
+      tags: ['Computer Vision', 'Machine Learning', 'Deep Learning', 'Python', 'TensorFlow', 'Keras'],
       color: 'from-violet-500 to-purple-500',
       links: {
-        demo: '#',
-      },
-      featured: false,
-    },
-    {
-      title: 'Event Management System',
-      category: 'web',
-      description: 'Full-stack web application for managing university events with ticketing and RSVP features.',
-      image: '🎫',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express'],
-      color: 'from-orange-500 to-red-500',
-      links: {
-        demo: '#',
         github: '#',
+        demo: '#',
       },
       featured: false,
     },
-  ];
+  ] as Project[];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
@@ -184,11 +153,10 @@ export function Projects() {
                 onClick={() => setFilter(category.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-                  filter === category.id
-                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30 border border-blue-400/30'
-                    : 'bg-slate-800/50 backdrop-blur-xl text-slate-300 hover:bg-slate-700/50 border border-white/5'
-                }`}
+                className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${filter === category.id
+                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30 border border-blue-400/30'
+                  : 'bg-slate-800/50 backdrop-blur-xl text-slate-300 hover:bg-slate-700/50 border border-white/5'
+                  }`}
               >
                 {Icon && <Icon className="w-4 h-4" />}
                 {category.label}
@@ -272,6 +240,8 @@ export function Projects() {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           href={project.links.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl text-sm font-semibold flex-1 justify-center shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow"
                         >
                           <Eye className="w-4 h-4" />
@@ -283,6 +253,8 @@ export function Projects() {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="p-2.5 bg-slate-900/50 text-slate-300 rounded-xl hover:text-white hover:bg-slate-800 transition-colors border border-white/5"
                         >
                           <Github className="w-5 h-5" />
@@ -293,6 +265,8 @@ export function Projects() {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           href={project.links.figma}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="p-2.5 bg-slate-900/50 text-slate-300 rounded-xl hover:text-white hover:bg-slate-800 transition-colors border border-white/5"
                         >
                           <Figma className="w-5 h-5" />

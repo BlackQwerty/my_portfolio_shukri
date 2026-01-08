@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Github, Linkedin, Mail, Download, Sparkles, Award, Briefcase, Code } from 'lucide-react';
+import profilePic from '../photos/pp.jpeg';
+
 
 export function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -135,9 +137,9 @@ export function Home() {
             >
               <div className="flex items-center gap-3">
                 {[
-                  { icon: Github, href: 'https://github.com/yourusername' },
-                  { icon: Linkedin, href: 'https://linkedin.com/in/yourusername' },
-                  { icon: Mail, href: 'mailto:your.email@example.com' },
+                  { icon: Github, href: 'https://github.com/BlackQwerty' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/ahmadshukribakriswe/' },
+                  { icon: Mail, href: 'mailto:b032310856@student.utem.edu.my' },
                 ].map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -197,11 +199,13 @@ export function Home() {
               {/* Profile Card */}
               <div className="relative bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-slate-800/90 backdrop-blur-2xl rounded-3xl p-1 border border-white/10 shadow-2xl">
                 <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl p-8">
-                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 overflow-hidden shadow-2xl shadow-blue-500/50 relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
-                    <div className="w-full h-full flex items-center justify-center text-white text-7xl font-bold">
-                      S
-                    </div>
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative group">
+                    <img
+                      src={profilePic}
+                      alt="Ahmad Shukri"
+                      className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80" />
                   </div>
 
                   {/* Stats */}
@@ -228,14 +232,7 @@ export function Home() {
                 </div>
               </div>
 
-              {/* Floating Badge */}
-              <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-6 -right-6 bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 rounded-2xl p-5 shadow-2xl shadow-blue-500/50 border border-blue-400/30"
-              >
-                <Sparkles className="w-10 h-10 text-white" />
-              </motion.div>
+
 
               {/* Status Badge */}
               <motion.div

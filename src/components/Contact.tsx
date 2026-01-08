@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, CheckCircle, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle, CheckCircle, Sparkles } from 'lucide-react';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -10,11 +10,21 @@ export function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
+    setIsSending(true);
+
+    const email = 'b032310856@student.utem.edu.my';
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(formData.subject)}&body=${body}`;
+
+    window.location.href = mailtoUrl;
+
     setSubmitted(true);
+    setIsSending(false);
+
     setTimeout(() => {
       setSubmitted(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -32,15 +42,15 @@ export function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
+      value: 'b032310856@student.utem.edu.my',
+      href: 'mailto:b032310856@student.utem.edu.my',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+60 12-345 6789',
-      href: 'tel:+60123456789',
+      value: '+60 11 2995 3751',
+      href: 'tel:+601129953751',
       color: 'from-green-500 to-emerald-500',
     },
     {
@@ -56,25 +66,19 @@ export function Contact() {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/BlackQwerty',
       color: 'hover:text-white hover:border-white/20',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/yourusername',
+      href: 'https://www.linkedin.com/in/ahmadshukribakriswe/',
       color: 'hover:text-blue-400 hover:border-blue-400/30',
-    },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com/yourusername',
-      color: 'hover:text-cyan-400 hover:border-cyan-400/30',
     },
     {
       icon: MessageCircle,
       label: 'Telegram',
-      href: 'https://t.me/yourusername',
+      href: 'https://t.me/+601129953751',
       color: 'hover:text-blue-500 hover:border-blue-500/30',
     },
   ];
@@ -123,7 +127,7 @@ export function Contact() {
             className="lg:col-span-2"
           >
             <h2 className="text-3xl mb-8 text-white font-semibold">Get in Touch</h2>
-            
+
             {/* Contact Cards */}
             <div className="space-y-4 mb-10">
               {contactInfo.map((info, index) => {
@@ -132,6 +136,8 @@ export function Contact() {
                   <motion.a
                     key={index}
                     href={info.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 + index * 0.1 }}
@@ -194,7 +200,7 @@ export function Contact() {
                     Available for Opportunities
                   </div>
                   <div className="text-sm text-slate-300 leading-relaxed">
-                    Currently seeking internship opportunities and freelance projects. 
+                    Currently seeking internship opportunities and freelance projects.
                     Let's create something amazing together!
                   </div>
                 </div>
@@ -212,9 +218,7 @@ export function Contact() {
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-2xl rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden">
               {/* Background glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl" />
-              
-              <h2 className="text-2xl mb-8 text-white font-semibold relative z-10">Send a Message</h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -287,16 +291,15 @@ export function Contact() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={submitted}
-                  className={`w-full py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all shadow-lg ${
-                    submitted
-                      ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-green-500/30'
-                      : 'bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 text-white shadow-blue-500/30 hover:shadow-blue-500/50'
-                  }`}
+                  className={`w-full py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all shadow-lg ${submitted
+                    ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-green-500/30'
+                    : 'bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 text-white shadow-blue-500/30 hover:shadow-blue-500/50'
+                    }`}
                 >
                   {submitted ? (
                     <>
                       <CheckCircle className="w-5 h-5" />
-                      Message Sent Successfully!
+                      Message Sent!
                     </>
                   ) : (
                     <>

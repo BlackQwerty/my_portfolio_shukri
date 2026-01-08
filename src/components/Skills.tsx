@@ -10,7 +10,7 @@ export function Skills() {
       color: 'from-purple-500 to-pink-500',
       skills: [
         { name: 'Figma', level: 95 },
-        { name: 'Adobe XD', level: 85 },
+        { name: 'Canva', level: 85 },
         { name: 'User Research', level: 90 },
         { name: 'Wireframing', level: 92 },
         { name: 'Prototyping', level: 88 },
@@ -36,11 +36,17 @@ export function Skills() {
       color: 'from-green-500 to-emerald-500',
       skills: [
         { name: 'Node.js', level: 80 },
-        { name: 'Express.js', level: 78 },
         { name: 'MongoDB', level: 82 },
         { name: 'Firebase', level: 85 },
         { name: 'REST APIs', level: 88 },
         { name: 'SQL', level: 75 },
+        { name: 'Python', level: 80 },
+        { name: 'Java', level: 85 },
+        { name: 'C++', level: 80 },
+        { name: 'C', level: 80 },
+        { name: 'Oracle Data Modeler', level: 80 },
+        { name: 'MySQL', level: 80 },
+        { name: 'PostgreSQL', level: 80 },
       ],
     },
     {
@@ -48,12 +54,10 @@ export function Skills() {
       icon: Layers,
       color: 'from-yellow-500 to-orange-500',
       skills: [
-        { name: 'Git & GitHub', level: 90 },
+        { name: 'Git & GitHub', level: 70 },
         { name: 'VS Code', level: 95 },
-        { name: 'Postman', level: 85 },
-        { name: 'Jira', level: 80 },
-        { name: 'Notion', level: 88 },
-        { name: 'Miro', level: 82 },
+        { name: 'Postman', level: 65 },
+        { name: 'Jira', level: 40 },
       ],
     },
   ];
@@ -70,7 +74,7 @@ export function Skills() {
   const expertise = [
     { label: 'Years Experience', value: '3+', icon: Rocket },
     { label: 'Technologies', value: '20+', icon: Code },
-    { label: 'Projects Completed', value: '15+', icon: Award },
+    { label: 'Projects Completed', value: '10+', icon: Award },
     { label: 'Design Hours', value: '500+', icon: Brain },
   ];
 
@@ -151,7 +155,7 @@ export function Skills() {
               >
                 {/* Background glow */}
                 <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity`} />
-                
+
                 <div className="flex items-center gap-4 mb-8 relative z-10">
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
@@ -214,7 +218,7 @@ export function Skills() {
               >
                 <div className="h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-2xl p-8 border border-white/5 hover:border-white/10 transition-all relative overflow-hidden">
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity`} />
-                  
+
                   <div className="text-5xl mb-5 group-hover:scale-110 transition-transform inline-block">
                     {skill.icon}
                   </div>
@@ -236,16 +240,16 @@ export function Skills() {
           <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-2xl rounded-3xl p-12 border border-white/10 overflow-hidden">
             <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10 text-center">
               <div className="text-6xl mb-6">🎓</div>
               <h3 className="text-3xl mb-6 text-white font-semibold">Continuous Learning</h3>
               <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
-                I'm constantly expanding my skill set through online courses, hands-on projects, and staying 
-                up-to-date with the latest industry trends. My passion for learning drives me to explore 
+                I'm constantly expanding my skill set through online courses, hands-on projects, and staying
+                up-to-date with the latest industry trends. My passion for learning drives me to explore
                 new technologies and refine my existing expertise.
               </p>
-              
+
               <div className="flex flex-wrap justify-center gap-3">
                 {['HCI Principles', 'Accessibility', 'Responsive Design', 'Agile Methodology', 'Design Thinking', 'User Psychology'].map((topic, index) => (
                   <motion.span
