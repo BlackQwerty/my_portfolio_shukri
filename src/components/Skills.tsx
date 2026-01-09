@@ -11,6 +11,8 @@ export function Skills() {
       skills: [
         { name: 'Figma', level: 95 },
         { name: 'Canva', level: 85 },
+        { name: 'Adobe Illustrator', level: 50 },
+        { name: 'Adobe Photoshop', level: 50 },
         { name: 'User Research', level: 90 },
         { name: 'Wireframing', level: 92 },
         { name: 'Prototyping', level: 88 },

@@ -67,7 +67,7 @@ export function Projects() {
       color: 'from-green-500 to-emerald-500',
       links: {
         demo: '#',
-        github: '#',
+        github: 'https://github.com/BlackQwerty/dad_project_real.git',
       },
       featured: false,
     },
