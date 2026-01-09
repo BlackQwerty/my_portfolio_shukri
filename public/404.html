@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages SPA fallback
+    // Redirects to base path with hash of current path
+    var path = window.location.pathname;
+    var repo = '/my_portfolio_shukri/';
+    if (path.startsWith(repo)) {
+      var subPath = path.slice(repo.length);
+      if (subPath) {
+        window.location.replace(repo + '#/' + subPath);
+      } else {
+        window.location.replace(repo);
+      }
+    } else {
+      window.location.replace(repo);
+    }
+  </script>
+</head>
+
+<body>
+  <p>Redirecting to home...</p>
+</body>
+
+</html>

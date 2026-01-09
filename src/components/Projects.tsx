@@ -80,7 +80,7 @@ export function Projects() {
       color: 'from-yellow-500 to-orange-500',
       links: {
         demo: '#',
-        github: '#',
+        github: 'https://github.com/BlackQwerty/HR_Management_System.git',
       },
       featured: false,
     },

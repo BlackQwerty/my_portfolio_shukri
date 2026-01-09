@@ -163,7 +163,7 @@ export function Home() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="shukri_resume.pdf"
+                href={`${import.meta.env.BASE_URL}shukri_resume.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-slate-300 hover:text-white hover:border-blue-400/50 hover:bg-slate-800/70 transition-all"
