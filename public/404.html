@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shukri's Portfolio | HCI & UI/UX</title>
+  <script type="module" crossorigin src="/my_portfolio_shukri/assets/index-CIBMjyEI.js"></script>
+  <link rel="stylesheet" crossorigin href="/my_portfolio_shukri/assets/index-CGSwKgfA.css">
   <script>
-    // GitHub Pages SPA fallback
-    // Redirects to base path with hash of current path
-    var path = window.location.pathname;
-    var repo = '/my_portfolio_shukri/';
-    if (path.startsWith(repo)) {
-      var subPath = path.slice(repo.length);
-      if (subPath) {
-        window.location.replace(repo + '#/' + subPath);
-      } else {
-        window.location.replace(repo);
-      }
-    } else {
-      window.location.replace(repo);
-    }
+    // GitHub Pages 404.html for SPA routing
+    // Redirect all 404s to index.html for client-side routing
+    const segmentCount = 0;
+    const l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+      l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
   </script>
 </head>
 
 <body>
-  <p>Redirecting to home...</p>
+  <div id="root"></div>
 </body>
 
 </html>
