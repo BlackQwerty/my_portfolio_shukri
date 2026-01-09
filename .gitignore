@@ -84,3 +84,5 @@ typings/
 # Dist (build output)
 dist/
 dist-ssr/
+
+*.md
